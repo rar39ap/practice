@@ -1,0 +1,25 @@
+div{
+    border: 1px solid #d4d2d2;
+    background-color: #f5f1f1;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 10px solid red;
+
+span {
+    p{
+    margin: 0px;
+}
+}
+button{
+    padding: 3px 8px;
+    cursor: pointer;
+}
+}
+.active-status{
+    border-left: 10px solid green;
+
+}
