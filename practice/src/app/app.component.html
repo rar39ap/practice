@@ -1,0 +1,21 @@
+<h2>Hello This is just Practice</h2>
+<app-student [name]="firstStudent"></app-student>
+
+<p *ngFor="let num of listNumbers">{{ num }}</p>
+<div class="sub-class">
+  <div class="title-class">
+    <h2>List of Subjects</h2>
+
+    <button *ngIf="!showNewSubject" (click)="showNewSubject = true">Add</button>
+    <button *ngIf="showNewSubject" (click)="shownewSubject = false">Cancel</button>
+  </div>
+
+  <app-add-subject *ngIf="showNewSubject" (save)="onSave($event)"></app-add-subject>
+
+  <app-list-subjects
+    *ngFor="let subject of subjectsList"
+    [subject]="subject"
+    (delete)="onDelete($event)"
+  ></app-list-subjects>
+</div>
+<!-- <p *ngFor="let subject of subjectsList">{{subject.name}} it's code {{subject.ID}} and teachers name</p> -->
