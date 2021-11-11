@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Isubject } from './model/subject.model';
 
 @Injectable({
@@ -20,4 +20,45 @@ export class SubjectService {
   create(newSubject: Isubject): Observable<Isubject> {
     return this.http.post<Isubject>(this.baseurl, newSubject);
   }
+  getEmployee(): Observable<employee> {
+    const employee: employee = { id: 1, name: 'srinivas', dep: 'cse', salary: 0 };
+    return of(employee);
+  }
+  getSalary(): Observable<salary> {
+    const employee: salary = {
+      employeeID: 1,
+      month: 10,
+      salary: 1000,
+    };
+    return of(employee);
+  }
+
+getEmployeeMonthSalary(): Observable<employee> {
+  return this.getEmployee().pipe(
+    switchMap((employee: employee) => 
+      this.getSalary().pipe (map((salary: salary) => {
+          employee.salary = salary.salary;
+          return employee;
+        }))
+    )
+  )
 }
+
+}
+
+export interface employee {
+  id: number;
+  name: string;
+  dep: string;
+  salary: number;
+}
+export interface salary {
+  employeeID: number;
+  month: number;
+  salary: number;
+}
+
+function switchMap(arg0: (employee: employee) => void): import("rxjs").OperatorFunction<employee, employee> {
+  throw new Error('Function not implemented.');
+}
+

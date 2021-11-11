@@ -1,9 +1,36 @@
 <h2>Reactive Forms</h2>
 
-<form [formGroup]="registerForm" (ngSubmit)="submit()">
+<form [formGroup]="registerForm" (ngSubmit)="submit()" #form='ngForm'>
     <label>Name</label>
     <input type="text" formControlName="name"/>
+    <span *ngIf="isSubmitted && registerForm.controls.name?.errors?.required">Name is required</span><br>
     <label>Email</label>
     <input type="email" formControlName="email"/>
+    <span *ngIf="isSubmitted && registerForm.controls.email?.errors?.required">email is required</span>
+    <span *ngIf="isSubmitted && registerForm.controls.email?.errors?.required">enter the valid email</span>
+    <br>
+    
+    <label>createPassword</label>
+    <input type="text" formControlName="createPassword"/>
+    <span *ngIf="registerForm.controls.createPassword?.errors?.required">createPassword is required</span><br>
+    <label>confirmPassword</label>
+    <input type="text" formControlName="confirmPassword"/>
+    <span *ngIf="registerForm.controls.confirmPassword?.errors?.match">{{registerForm.controls.confirmPassword?.errors?.match}}</span><br>
+        
+    <input type="radio" value="male" formControlName="gender"/>
+    <input type="radio" value="female" formControlName="gender"/>
+    <select formControlName="country">
+        <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+    </select>
+    <button (click)="addItem()">add</button>
+    <div formArrayName='StoreDetails'>
+        <!-- <div *ngFor="let category of storeArray; let i = index" [formGroupName]='i'> -->
+            <div *ngFor="let category of s; let i = index" [formGroupName]='i'>
+            <input type="text" formControlName="storeName"/>
+            <input type="text" formControlName="categories"/>
+            <button (click)="removeItem(i)">remove</button> 
+        </div>
+    </div>
+    
     <button type="submit">Submit</button>
 </form>

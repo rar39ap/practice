@@ -10,6 +10,7 @@ export class ListSubjectsComponent implements OnInit {
   @Output() delete: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
+
   ngOnInit(): void {}
   onDelete(subjectID: number): void {
     this.delete.emit(subjectID);
