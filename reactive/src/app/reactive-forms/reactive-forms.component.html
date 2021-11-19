@@ -23,14 +23,14 @@
         <option *ngFor="let country of countries" [value]="country">{{country}}</option>
     </select>
     <button (click)="addItem()">add</button>
-    <div formArrayName='StoreDetails'>
-        <!-- <div *ngFor="let category of storeArray; let i = index" [formGroupName]='i'> -->
+    <!-- <div formArrayName='StoreDetails'>
+       <div *ngFor="let category of storeArray; let i = index" [formGroupName]='i'> 
             <div *ngFor="let category of s; let i = index" [formGroupName]='i'>
             <input type="text" formControlName="storeName"/>
             <input type="text" formControlName="categories"/>
             <button (click)="removeItem(i)">remove</button> 
         </div>
-    </div>
+    </div>  -->
     
     <button type="submit">Submit</button>
 </form>

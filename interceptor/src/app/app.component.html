@@ -1,0 +1,8 @@
+<h2>Users</h2>
+
+<button (click)="loadUsers()">Load users</button>
+<ul>
+    <li *ngFor="let user of users | async">
+      {{ user.name}}
+    </li>
+  </ul>

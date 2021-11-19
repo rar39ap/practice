@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { I1 } from 'src/environments/services/interceptor';
-import { TemplateFormComponent } from './template-form/template-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReactiveFormsComponent,
-    TemplateFormComponent
+    ReactiveFormsComponent
+  
+    
   ],
   imports: [
     BrowserModule,

@@ -17,9 +17,9 @@ export class SampleService {
 
   constructor(private http: HttpClient) { }
   getData(): Observable<todos> {
-    return of(this.body);
+    // return of(this.body);
     
-    // return  this.http.get<todos>('https://jsonplaceholder.typicode.com/todos/1')
+    return  this.http.get<todos>('https://jsonplaceholder.typicode.com/todos/1')
   }
 }
 

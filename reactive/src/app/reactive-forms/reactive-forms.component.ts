@@ -27,7 +27,7 @@ export class ReactiveFormsComponent implements OnInit, OnDestroy {
     country: new FormControl(''),
     gender: new FormControl(),
 
-    StoreDetails: new FormArray([])
+    // StoreDetails: new FormArray([])
 
   }, [comparePassword]);
 
@@ -57,14 +57,14 @@ export class ReactiveFormsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     // this.registerForm.controls['name'].valueChanges.pipe(tap(x=>console.log(x))).subscribe();
-    this.registerForm.controls['name'].statusChanges.pipe(tap(x=>console.log(x))).subscribe();
+    // this.registerForm.controls['name'].statusChanges.pipe(tap(x=>console.log(x))).subscribe();
 
-    this.sample$.pipe(
+    // this.sample$.pipe(
       // first()
       // take(2)
       // takeWhile(x=> x < 5)
       // takeWhile(x=> x < 5, true)
-      takeUntil(this.destroy$));
+      // takeUntil(this.destroy$));
 
   }
 
@@ -82,23 +82,3 @@ export class ReactiveFormsComponent implements OnInit, OnDestroy {
   }
 
 }
-function tap(arg0: (x: any) => void): import("rxjs").OperatorFunction<any, unknown> {
-  throw new Error('Function not implemented.');
-}
-
-function takeUntil(destroy$: BehaviorSubject<any>): import("rxjs").OperatorFunction<number, unknown> {
-  throw new Error('Function not implemented.');
-}
-
-function first(): import("rxjs").OperatorFunction<number, unknown> {
-  throw new Error('Function not implemented.');
-}
-
-function take(arg0: number): import("rxjs").OperatorFunction<unknown, unknown> {
-  throw new Error('Function not implemented.');
-}
-
-function takeWhile(arg0: (x: any) => boolean): import("rxjs").OperatorFunction<unknown, unknown> {
-  throw new Error('Function not implemented.');
-}
-

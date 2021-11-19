@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, } from 'rxjs';
 import { Isubject } from './model/subject.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -33,15 +34,15 @@ export class SubjectService {
     return of(employee);
   }
 
-getEmployeeMonthSalary(): Observable<employee> {
-  return this.getEmployee().pipe(
-    switchMap((employee: employee) => 
-      this.getSalary().pipe (map((salary: salary) => {
-          employee.salary = salary.salary;
-          return employee;
-        }))
+ getEmployeeMonthSalary(): Observable<employee> {
+   return this.getEmployee().pipe(
+     switchMap((employee: employee) => 
+       this.getSalary().pipe (map((salary: salary) => {
+           employee.salary = salary.salary;
+           return employee;
+         }))
     )
-  )
+   )
 }
 
 }

@@ -9,6 +9,7 @@ import { ListSubjectsComponent } from './list-subjects/list-subjects.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
+import { BookComponent } from './book/book.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { LoginModule } from './login/login.module';
     StudentComponent,
     ListSubjectsComponent,
     AddSubjectComponent,
+    BookComponent,
   ],
   imports: [
     BrowserModule, 
