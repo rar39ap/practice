@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
    
      localStorage.setItem("username", res["userDetails"]["username"])
     localStorage.setItem("token",res["token"])
-    this.route.navigate(['login/success'])
+    this.route.navigate(['success'])
    
  }, (error=> console.log(error))
  )

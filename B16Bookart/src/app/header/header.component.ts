@@ -14,10 +14,11 @@ export class HeaderComponent implements OnInit {
   }
   onCheckOut(){
     let token = localStorage.getItem("token")
-    if(token){
-      this.route.navigate(["/dashboard"])
-    }else {
+    if(!token){
       this.route.navigate(["/login"])
+
+    }else {
+      this.route.navigate(["/success"])
     }
   }
 }
