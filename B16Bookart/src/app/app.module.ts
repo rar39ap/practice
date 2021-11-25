@@ -10,6 +10,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuccessComponent } from './success/success.component';
 import { HeaderComponent } from './header/header.component'
+import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -32,7 +33,7 @@ import { HeaderComponent } from './header/header.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

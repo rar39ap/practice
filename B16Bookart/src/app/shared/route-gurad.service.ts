@@ -6,9 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class RouteGuradService {
   _url = "https://bookcart.azurewebsites.net/api/Login"
+
   constructor(private http: HttpClient) { }
+  
   logIn(body:any){
     return this.http.post(this._url, body)
+  }
+  loggedIn(){
+    return localStorage.getItem("token")
   }
   
 }

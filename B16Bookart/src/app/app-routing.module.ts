@@ -24,10 +24,10 @@ const routes: Routes = [
     path:'success/login', component: SuccessComponent
   },
   {
-    path: 'success', component:SuccessComponent, canActivate: [AuthGuard]
+    path: 'success', component:SuccessComponent
   },
   {path: '', redirectTo:'header' , pathMatch:'full'},
-  {path:'header', component:HeaderComponent}
+  {path:'header', component:HeaderComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

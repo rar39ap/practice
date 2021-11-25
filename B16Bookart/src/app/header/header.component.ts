@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   onCheckOut(){
+
+    
     let token = localStorage.getItem("token")
     if(!token){
       this.route.navigate(["/login"])
